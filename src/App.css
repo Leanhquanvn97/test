@@ -56,3 +56,24 @@ form > div:last-of-type {
 form > div:last-of-type input {
   margin-left: 12px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse
+}
+
+tr {
+  border-bottom: 1px solid gray;
+}
+
+td {
+  padding-block: 12px;
+}
+
+section {
+  margin-bottom: 24px;
+}
+
+button {
+  margin-bottom: 12px;
+}

@@ -24,3 +24,9 @@ dist-ssr
 *.sw?
 
 helical-disk-409516-firebase-adminsdk-thttu-cf386bd209.json
+/build
+firebase.json
+.firebaserc
+
+.github
+.firebase

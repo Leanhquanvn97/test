@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-
 const DisplayHierarchy = ({ category }) => {
     const generateElements = (initialStack) => {
         const elements = [];
@@ -8,11 +7,11 @@ const DisplayHierarchy = ({ category }) => {
         while (stack.length > 0) {
             const { category, layer } = stack.pop();
             const margin = `${layer * 12}px`;
-            console.log(category)
+
             elements.push(
-                <option 
-                    key={category.name + category.id} 
-                    className={`layer-${layer}`} 
+                <option
+                    key={category.name + category.id + stack.length}
+                    className={`layer-${layer}`}
                     value={category.id}
                     style={{ marginInlineStart: margin }}
                 >
@@ -29,14 +28,13 @@ const DisplayHierarchy = ({ category }) => {
 
         return elements;
     };
-    
+
     const elements = generateElements([{ category, layer: 0 }]);
 
     return elements;
 };
 
-export const Select = ({ data, label, required=false }) => {
-
+export const Select = ({ data, label, required = false, value='1', onChange }) => {
     if (!Object.keys(data).length) {
         return null;
     }
@@ -46,9 +44,9 @@ export const Select = ({ data, label, required=false }) => {
     return (
         <>
             <label>{label}</label>
-            <select size={5} required={required} name="sector">
+            <select size={5} required={required} name="sector" value={value} onChange={(e)=>onChange(e.target.value)}>
                 {dataKeys.map(key => {
-                    return <DisplayHierarchy key={key} category={data[key]}/>
+                    return <DisplayHierarchy key={key} category={data[key]} />
                 })}
             </select>
         </>
