@@ -30,4 +30,4 @@ firebase.json
 
 .github
 .firebase
-src\firebase.js
+src/firebase.js
